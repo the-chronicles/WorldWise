@@ -1,10 +1,11 @@
 import styles from "./CountryItem.module.css";
 
+
+/* eslint-disable-next-line */
 function CountryItem({ country }) {
   return (
-    <li className={styles.countryItem}>
-      <span>{country.emoji}</span>
-      <span>{country.country}</span>
+    /* eslint-disable-next-line */
+    <li className={styles.countryItem}><span>{country.emoji}</span><span>{country.country}</span>
     </li>
   );
 }
