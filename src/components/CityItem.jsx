@@ -1,3 +1,5 @@
+/* eslint-disable */
+import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
 
 const formatDate = (date) =>
@@ -7,19 +9,25 @@ const formatDate = (date) =>
     year: "numeric",
   }).format(new Date(date));
 
-/* eslint-disable-next-line */
 function CityItem({ city }) {
-  /* eslint-disable-next-line */
-  const { cityName, emoji, date } = city;
+  const { cityName, emoji, date, id, position } = city;
+
+  console.log(position);
 
   return (
-    <li className={styles.cityItem}>
-      <span className={styles.emoji}>{emoji}</span>
-      <h1 className={styles.name}>{cityName}</h1>
-      <time className={date}>({formatDate(date)})</time>
-      <button className={styles.deleteBtn}>&times;</button>
+    <li>
+      <Link
+        className={styles.cityItem}
+        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+      >
+        <span className={styles.emoji}>{emoji}</span>
+        <h1 className={styles.name}>{cityName}</h1>
+        <time className={date}>({formatDate(date)})</time>
+        <button className={styles.deleteBtn}>&times;</button>
+      </Link>
     </li>
   );
 }
 
 export default CityItem;
+/* eslint-disable */
