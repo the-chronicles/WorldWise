@@ -4,6 +4,7 @@ const BASE_URL = "http://localhost:8000";
 
 const CitiesContext = createContext();
 
+/* eslint-disable */
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
