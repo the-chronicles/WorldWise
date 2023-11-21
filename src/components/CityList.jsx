@@ -2,16 +2,18 @@ import Spinner from "./Spinner";
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
 import Message from "./Message";
+import { useCities } from "../contexts/CitiesContext";
 
-/* eslint-disable-next-line */
-function CityList({ cities, isLoading }) {
+
+function CityList() {
+  const { cities, isLoading } = useCities();
   if (isLoading) return <Spinner />;
-/* eslint-disable-next-line */
+  
   if (!cities.length) return <Message message="Add your first city" />;
 
   return (
-    /* eslint-disable-next-line */
-    <ul className={styles.cityList}>{cities.map((city) => (
+    <ul className={styles.cityList}>
+      {cities.map((city) => (
         <CityItem city={city} key={city.id} />
       ))}
     </ul>

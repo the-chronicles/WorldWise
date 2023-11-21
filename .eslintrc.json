@@ -1,11 +1,3 @@
 {
-  "extends": "react-app",
-
-
-  "rules": {
-    "no-console": "off",         // Turn off the 'no-console' rule
-    "no-unused-vars": "warn",    // Treat 'no-unused-vars' as a warning
-    "prefer-const": "warn"      // Treat 'prefer-const' as an error
-  }
-
+  "extends": "react-app"
 }
