@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext();
@@ -19,7 +21,7 @@ function reducer(state, action) {
 }
 
 const FAKE_USER = {
-  name: "Jack",
+  name: "Chronicles",
   email: "jack@example.com",
   password: "qwerty",
   avatar: "https://i.pravatar.cc/100?u=zz",
@@ -51,7 +53,8 @@ function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined)
     throw new Error("AuthContent was used outside AuthProvider");
+
+  return context;
 }
 
-
-export {AuthProvider, useAuth}
+export { AuthProvider, useAuth };
