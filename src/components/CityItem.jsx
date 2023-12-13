@@ -39,4 +39,4 @@ function CityItem({ city }) {
 }
 
 export default CityItem;
-/* eslint-disable */
+// /* eslint-disable */
